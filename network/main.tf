@@ -55,7 +55,7 @@ resource "aws_default_route_table" "tf_private_rt" {
 resource "aws_subnet" "tf_public_subnet" {
     count = 2 
     vpc_id = "${aws_vpc.tf_vpc.id}"
-    cidr_block = "${var.public_cidr{count.index]}"
+    cidr_block = "${var.public_cidr[count.index]}"
     
     # Specify true to indicate that instances launched into the subnet should be assigned a public IP address. Default is false.
     map_public_ip_on_launch = true
@@ -71,7 +71,7 @@ resource "aws_subnet" "tf_public_subnet" {
 
 resource "aws_route_table_association" "tf_public_association" {
     count = "${aws_subnet.tf_public_subnet.count}"
-    subnet_id = "${aws_subnet.tf_public_subnet.*.id[count.index]"
+    subnet_id = "${aws_subnet.tf_public_subnet.*.id[count.index]}"
     route_table_id = "${aws_route_table.tf_public_rt.id}"
 }
 
