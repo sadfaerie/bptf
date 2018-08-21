@@ -1,4 +1,5 @@
-aws_region = "eu-west-2"
+# EU-WEST-1 Ireland
+aws_region = "eu-west-1"
 
 bp_terraform_poc = "bp-terraform"
 
@@ -10,3 +11,8 @@ public_cidr = [
     ]
 
 ingress_ip = "0.0.0.0/0"
+
+public_key_name = "tfkey"
+public_key_path = "/home/ec2-user/.ssh/id_rsa.pub" 
+instance_type = "t2.micro" 
+instance_count =2
